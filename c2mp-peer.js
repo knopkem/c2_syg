@@ -123,8 +123,8 @@
 		this.firedClose = false;
 		this.connectTime = window.cr_performance_now();
 		
-		// Create the peer connection
-		this.pc = new RTCPeerConnection({"iceServers": this.mp.getIceServerList()});
+		// Create the peer connection. Enable Google's experimental IPv6 support.
+		this.pc = new RTCPeerConnection({"iceServers": this.mp.getIceServerList()}, {"optional": [{"googIPv6": true}]});
 		
 		// Forward ICE candidates to this peer via signalling
 		this.pc.onicecandidate = function (e)

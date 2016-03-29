@@ -229,6 +229,12 @@
 		}
 	};
 	
+	pathfinder.prototype.unsetReady = function ()
+	{
+		// revert to no data state
+		this.cells = null;
+	};
+	
 	pathfinder.prototype.isReady = function ()
 	{
 		return !!this.cells;
